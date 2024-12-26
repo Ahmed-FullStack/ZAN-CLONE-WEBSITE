@@ -1,0 +1,359 @@
+/* .div{
+    --width: 200px;
+    width: calc(var(--width) * 2);
+    padding: 20px;
+    margin : 0 auto;
+    background-color: red;
+}
+
+
+:root{
+    --hue: 300;
+}
+
+
+.primary{
+    background-color: hsl(var(--hue), 100%, 50%);
+}
+
+.danger{
+    background-color: hsl(calc(var(--hue) - 180), 100%, 50%);
+} */
+/* @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&display=swap'); */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	font-family: 'Google Sans';
+	-webkit-tap-highlight-color: transparent;
+	text-decoration: none;
+}
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5% 8%;
+	background-color: hsl(173, 76%, 69%);
+	margin: 0;
+	width: 100%;
+	max-width: 1800px;
+	margin: 0 auto;
+}
+
+.brand-logo h3 {
+	font-size: 1.3rem;
+}
+
+.ul-items {
+	display: flex;
+	list-style: none;
+	margin: 0;
+}
+
+.li-items {
+	margin: 0 10px;
+}
+
+.nav-links {
+	text-decoration: none;
+	display: inline-block;
+	padding: 14px 10px;
+	font-size: 1.3rem;
+	font-weight: 700;
+	color: black;
+	border-radius: 5px;
+	transition: all 100ms ease;
+	position: relative;
+}
+.nav-links:hover {
+	background-color: hsla(202, 75%, 64%, 0.384);
+	box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.1);
+	transition: all 100ms ease 80ms;
+}
+
+.nav-links::before {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	right: 0;
+	width: 100%;
+	transform: scaleX(0);
+	transform-origin: right;
+	height: 2.5px;
+	background-color: blue;
+	transition: transform 450ms ease-out;
+}
+
+.nav-links:hover::before {
+	transform: scaleX(1);
+	transform-origin: left;
+	transition: transform 200ms ease-out;
+}
+
+.nav-links::after {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	right: 0;
+	width: 100%;
+	transform: scaleX(0);
+	transform-origin: right;
+	height: 2.5px;
+	background-color: red;
+	transition: transform 200ms ease-out;
+}
+
+.nav-links:hover::after {
+	transform: scaleX(1);
+	transform-origin: left;
+	transition: transform 200ms ease-out;
+}
+
+.bar {
+	position: absolute;
+}
+
+@media (max-width: 590px) {
+	nav {
+		justify-content: space-between;
+		flex-direction: row-reverse;
+	}
+	.ul-items {
+		transform: translateX(-100%);
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-color: hsl(173, 89%, 64%);
+		flex-direction: column;
+		width: 100vw;
+		height: 100vh;
+		justify-content: center;
+		align-items: center;
+		padding: 0 10px;
+		transition: all 250ms cubic-bezier(0.14, 0.51, 0.47, 1.07);
+	}
+	.add {
+		overflow: hidden;
+	}
+	.li-items {
+		margin: 12px 0;
+	}
+	.brand-logo {
+		margin-right: auto;
+		z-index: 33;
+	}
+
+	.bar {
+		width: 40px;
+		height: 30px;
+		background-color: transparent;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		z-index: 55;
+	}
+	.hamburger-menu {
+		width: 100%;
+		height: 5px;
+		background-color: white;
+	}
+	.active {
+		transform: translateX(0%);
+		transition: all 250ms cubic-bezier(0.14, 0.51, 0.47, 1.07);
+		position: fixed;
+	}
+	.flex {
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.wrap {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.container {
+	width: 80%;
+	background-color: aliceblue;
+	margin: 0 auto;
+	padding: 70px 4%;
+	margin-top: 3rem;
+	margin-bottom: 3.5rem;
+	border-radius: 20px;
+	max-width: 1400px;
+}
+.flex {
+	display: flex;
+	justify-content: space-between;
+}
+
+.wrap {
+	width: 75%;
+	max-width: 680px;
+}
+
+.btn {
+	padding: 0.5em 1.2em;
+	background-color: antiquewhite;
+	color: black;
+	text-decoration: none;
+	font-size: 1.5rem;
+	border-radius: 63px;
+}
+.btn:hover,
+.btn:focus {
+	transition: al 200ms ease;
+	background-color: rgb(165, 238, 238);
+}
+.wrap h2 {
+	font-size: 2rem;
+	font-weight: 500;
+	margin-bottom: 1.5em;
+}
+
+.core {
+	width: 80%;
+	margin: 0 auto;
+	max-width: 1400px;
+	text-align: center;
+}
+
+.text h3 {
+	font-size: 1.9rem;
+	font-weight: 500;
+	margin-bottom: 5rem;
+}
+
+.img-ul {
+	list-style: none;
+	text-align: center;
+}
+.img-li {
+	margin-bottom: 5.5rem;
+}
+.imgs {
+	display: inline-block;
+	width: min(750px, 90%);
+	height: 400px;
+	background-size: cover;
+	position: relative;
+	background-repeat: no-repeat;
+	text-decoration: none;
+	text-align: left;
+	transition: all 200ms ease-out;
+}
+.imgs:hover {
+	transition: background-position 200ms ease-out;
+	background-position: center;
+}
+.imgs:hover .a-text {
+	transform: scale(1.1);
+	transition: transform 200ms ease-out 320ms;
+}
+.imgs::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(2, 2, 2, 0.308);
+}
+.imgs:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: hsla(221, 35%, 21%, 0.925);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 200ms ease-out 150ms;
+	z-index: 1;
+}
+.imgs:hover::before {
+	transform: scaleX(1);
+	transform-origin: left;
+	transition: transform 200ms ease-out 180ms;
+}
+.img1 {
+	/* background-image: url(http://riccardozanutta.com/img/cerasa-work.jpg); */
+}
+.img2 {
+	margin-left: 10%;
+	text-align: right;
+	/* background-image: url(http://riccardozanutta.com/img/la-francesca-work.jpg); */
+}
+.img3 {
+	background-repeat: no-repeat;
+	/* background-image: url(http://riccardozanutta.com/img/sportland-work.jpg); */
+}
+@media (max-width: 700px) {
+	.img2 {
+		margin-left: 0;
+	}
+}
+.img2 .a-text {
+	position: absolute;
+	content: '';
+	left: 10%;
+	right: 15%;
+	color: #fff;
+	z-index: 99;
+	transition: all 200ms ease-out;
+}
+.a-text {
+	position: absolute;
+	content: '';
+	left: 10%;
+	bottom: 15%;
+	color: #fff;
+	z-index: 99;
+	transition: all 200ms ease-out;
+}
+.a-text p {
+	font-size: 1.2rem;
+}
+
+.case-study {
+	display: inline-block;
+	cursor: pointer;
+	border-style: none;
+	outline: none;
+	padding: 1em 1.2em;
+	color: #fff;
+	font-size: 1rem;
+	letter-spacing: 3px;
+	position: relative;
+	font-weight: 700;
+	overflow: hidden;
+	background-image: linear-gradient(270deg, #f06449, #ef3636);
+}
+
+.case-study::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 90%;
+	height: 100%;
+	background-color: hsl(221, 35%, 16%);
+	transform: translateX(-220%);
+	transform-origin: right;
+	transition: transform 500ms ease;
+}
+
+.case-study:hover::after {
+	transform: translateX(150%);
+	transform-origin: left;
+	transition: transform 500ms ease-out;
+}
